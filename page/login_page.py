@@ -24,9 +24,11 @@ class LoginPage(BaseAction):
 
     # 判断按钮是否可见
     def is_login_button_enabled(self):
-        # 方式一：
+        # 写到base中后用下面的直接使用就可以
+        return self.is_feature_enabled(self.login_button)
+        # 方式一（提倡，简单）：
         # return self.find_element(self.login_button).is_enabled()
         # 方式二：
-        if self.find_element(self.login_button).get_attribute("enabled") == "true":
-            return True
-        return False
+        # if self.find_element(self.login_button).get_attribute("enabled") == "true":
+        #     return True
+        # return False
