@@ -29,3 +29,5 @@ class BaseAction:
 
     def last_element_text(self, feature):
         return self.find_elements(feature)[-1].text
+
+
