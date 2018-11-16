@@ -17,7 +17,7 @@ class TestLogin:
         time.sleep(5)
         self.driver.quit()
 
-    @pytest.mark.parametrize("args",analyze_with_file("data_login_msg", "test_login1"))
+    @pytest.mark.parametrize("args",analyze_with_file("login_data", "test_login1"))
     def test_login1(self, args):
         time.sleep(5)
         # 首页-我的

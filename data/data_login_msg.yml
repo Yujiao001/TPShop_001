@@ -1,5 +1,0 @@
-test_login1:
-  test_login001:
-    username : "13800138006"
-    password : "123456"
-    toast_msg: "登录成功"
