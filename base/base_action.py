@@ -22,6 +22,10 @@ class BaseAction:
     def click(self, feature):
         self.find_element(feature).click()
 
+    # 查看某一个元素是否可用
+    def is_feature_enabled(self, feature):
+        return self.find_element(feature).is_enabled()
+
     def input(self, feature, text):
         self.find_element(feature).send_keys(text)
 

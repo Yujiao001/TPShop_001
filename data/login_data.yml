@@ -1,4 +1,4 @@
-test_login1:
+test_login:
   test_login_001:
     username : "13800138006"
     password : "123456"
@@ -27,3 +27,10 @@ test_login1:
     username : "12300138006"
     password : "123456"
     toast_msg: "账号不存在"
+test_login_miss_part:
+  test_login_007:
+    username : "13800138006"
+    password : ""
+  test_login_008:
+    username : ""
+    password : "123456"
