@@ -21,3 +21,9 @@ class LoginPage(BaseAction):
     @allure.step("登录页面-点击-登录按钮")
     def click_login_button(self):
         self.click(self.login_button)
+
+    # 判断按钮是否可见
+    def is_login_button_enabled(self):
+        # return self.find_element(self.login_button).is_enabled()
+        if self.find_element(self.login_button).get_attribute("enabled") == "true":
+            return True
