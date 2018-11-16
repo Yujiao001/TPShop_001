@@ -16,11 +16,3 @@ class LoginPage(BaseAction):
 
     def click_login_button(self):
         self.click(self.login_button)
-
-    def is_toast_exist(self, text):
-        toast_feature = By.XPATH, "//*[contain(@text,'%s')]" % text
-        try:
-            self.find_element(toast_feature, timeout=5)
-            return True
-        except Exception as e:
-            return False

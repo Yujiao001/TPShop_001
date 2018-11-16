@@ -1,4 +1,5 @@
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.common.by import By
 
 
 class BaseAction:
@@ -6,7 +7,7 @@ class BaseAction:
     def __init__(self, driver):
         self.driver = driver
 
-    def find_element(self, feature, timeout=10, poll=1):
+    def find_element(self, feature, timeout=10, poll=1.0):
         by = feature[0]
         value = feature[1]
 
@@ -29,5 +30,14 @@ class BaseAction:
 
     def last_element_text(self, feature):
         return self.find_elements(feature)[-1].text
+
+    def is_toast_exist(self, text):
+        toast_feature = By.XPATH, "//*[contains(@text,'%s')]" % text
+        try:
+            self.find_element(toast_feature, timeout=5, poll=0.5)
+            # self.find_element((By.XPATH,"//*[contains(@text,'%s')]" % text),timeout=5)
+            return True
+        except Exception as e:
+            return False
 
 
