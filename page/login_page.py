@@ -49,5 +49,5 @@ class LoginPage(BaseAction):
         #     return True
         # return False
 
-    def get_password_test(self):
+    def get_password_text(self):
         return self.get_text(self.password)
