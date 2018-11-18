@@ -79,15 +79,13 @@ class TestLogin:
         # 1、登录页面 输入密码
         self.page.login.input_password(input_password)
         # 2、密码是不是没有显示，如果是
-        print("text框%s"% self.page.login.get_password_test())
-        print("输入的input%s"% input_password)
-        if not self.page.login.get_password_test() == input_password:
+        if self.page.login.get_password_text() == input_password:
             assert False, "password上的文字在没显示密码之前就显示了，不正常"
 
-        # 3、点击显示密码按钮
+        # 3、点击显示密码按钮get_password_text
         self.page.login.click_show_password()
-        # sleep看到效果
         time.sleep(2)
 
+        print(self.page.login.get_password_text())
         # 4、断言，密码框中的文字是不是和之前输入的一致
-        assert input_password == self.page.login.get_password_test()
+        assert input_password == self.page.login.get_password_text()
