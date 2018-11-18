@@ -29,8 +29,19 @@ class TestAddress:
             self.page.login.click_login_button()
 
         self.page.mine.click_address()
-        time.sleep(10)
         # 新建地址
+        self.page.address_list.click_add_address()
         # 添加联系人
+        self.page.address.input_name("itcast")
         # 添加手机
+        self.page.address.input_mobile("13888889999")
+        self.page.address.input_address("南法信地铁站")
+        self.page.address.click_region()
+        self.page.region.click_city()
+        self.page.region.click_commit()
+        time.sleep(3)
+        self.page.address.click_save_address()
+
+        assert self.page.address.is_toast_exist("成功")
+
 
